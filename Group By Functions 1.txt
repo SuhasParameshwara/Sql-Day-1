@@ -1,0 +1,96 @@
+Group By Functions 1
+
+1) SELECT MIN(last_name)
+    FROM customers
+ 
+ 2) SELECT AVG(monthly_payment)
+     FROM packages
+ 
+ 3) SELECT MAX(last_name) 
+     FROM customers
+ 
+ 4) SELECT COUNT(*) 
+     FROM packages 
+ 
+ 5) SELECT COUNT(*) 
+     FROM customers 
+ 
+ 6) SELECT COUNT(DISTINCT state)
+     FROM customers 
+ 
+ 7) SELECT COUNT(DISTINCT speed) 
+     FROM packages 
+ 
+ 8) SELECT COUNT(fax)
+     FROM customers 
+ 
+ 9) SELECT COUNT(*) 
+     FROM customers 
+     WHERE fax IS NOT NULL;
+
+10) SELECT  MIN(monthly_discount) ,
+      MAX(monthly_discount) ,
+      AVG(monthly_discount)
+      FROM customers 
+ 
+ 11) SELECT COUNT(*) ,
+       state
+       FROM customers 
+       GROUP BY state 
+ 
+ 12) SELECT AVG(monthly_payment) ,
+       speed 
+       FROM packages 
+       GROUP BY speed
+ 
+ 13) SELECT COUNT(DISTINCT city) ,
+       state
+       FROM customers 
+      GROUP BY state 
+ 
+ 14) SELECT MAX(monthly_payment) ,
+       sector_id 
+       FROM packages
+       GROUP BY sector_id 
+ 
+ 15) SELECT pack_id ,
+       AVG(monthly_discount)
+       FROM customers 
+       GROUP BY pack_id ;    
+ 
+ 16) SELECT speed , 
+       MIN(monthly_payment) , 
+       MAX(monthly_payment) ,
+      AVG(monthly_payment)
+      FROM   packages 
+      GROUP BY speed
+ 
+ 17) SELECT pack_id ,
+       COUNT(*) 
+       FROM customers 
+       GROUP BY pack_id
+ 
+18) SELECT state,
+      city,
+      COUNT(*)
+      FROM customers 
+      GROUP BY state,
+      city 
+      ORDER BY state, city
+
+19) SELECT AVG(monthly_discount) ,
+      city
+      FROM customers
+      GROUP BY city
+ 
+20) SELECT MIN(monthly_discount) , 
+      state 
+      FROM customers
+      GROUP BY state 
+
+21) SELECT COUNT(*) ,
+      speed 
+      FROM packages 
+      GROUP BY speed 
+      HAVING COUNT(*) > 8
+

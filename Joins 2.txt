@@ -1,0 +1,58 @@
+Joins 2
+
+1) SELECT emp.first_name ,
+    emp.last_name ,
+    emp.department_id ,
+    dep.department_name 
+    FROM employees emp 
+   JOIN departments dep 
+   ON emp.department_id = dep.department_id 
+
+2) SELECT dep.department_name ,
+     loc.city , 
+     loc.state_province
+     FROM   departments dep
+    JOIN locations loc 
+   ON  dep.location_id = loc.location_id
+
+3) SELECT emp.last_name , 
+    emp.salary , 
+    job_g.grade_level 
+    FROM   employees emp 
+   JOIN job_grades job_g
+    ON  emp.salary
+    BETWEEN job_g.lowest_sal 
+    AND job_g.highest_sal
+
+4) SELECT emp.first_name ,
+    emp.last_name ,
+    emp.department_id , 
+    dep.department_name 
+    FROM employees emp 
+    LEFT OUTER JOIN departments dep 
+    ON emp.department_id = dep.department_id
+
+5) SELECT emp.last_name 
+    AS 'EMPLOYEE_NAME',
+    mng.last_name
+    AS 'MANAGER_NAME' 
+    FROM  employees emp 
+   JOIN employees mng 
+   ON  emp.manager_id = mng.employee_id
+
+6) SELECT emp.last_name ,
+    emp.first_name , 
+    emp.department_id 
+    FROM   employees emp
+   JOIN employees specific_employee
+   ON  emp.department_id = specific_employee.department_id
+   AND specific_employee.last_name = 'King'
+   AND emp.last_name <> ‘King’
+
+7) SELECT emp.last_name , 
+    emp.salary
+    FROM   employees emp
+   JOIN employees specific_emp
+   ON  emp.salary < specific_emp.salary
+   AND  specific_emp.employee_id = 103
+

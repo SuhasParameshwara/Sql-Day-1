@@ -1,0 +1,42 @@
+Basic Select Statement 1
+
+1) SELECT customer_id, 
+    first_name , 
+    last_name , 
+    main_phone_num , 
+    secondary_phone_num , 
+    pack_id FROM customers
+
+2)  SELECT first_name ,
+     last_name ,
+     join_date ,
+     monthly_discount , 
+     monthly_discount * 1.2 AS 'DC_N' ,
+     monthly_discount * 0.6 AS 'DC_L' FROM customers
+
+3)  SELECT pack_id ,
+     speed, strt_date,
+     monthly_payment, 
+     monthly_payment * 12 AS 'Y_INCOME' FROM packages
+
+4)  SELECT first_name + ' ' + last_name AS 'FULL_NAME' ,
+      main_phone_num + ' , ' + secondary_phone_num AS         'CONTACT_DETAILS'
+      FROM customers
+
+5)  SELECT DISTINCT city FROM customers
+
+6)  SELECT DISTINCT state FROM customers
+
+7)  SELECT DISTINCT state, city FROM customers
+
+8)  SELECT last_name + ' ' + state AS 'CUSTOMER_AND_STATE'FROM customers
+
+9)  SELECT first_name AS 'FN' ,last_name AS 'LN' ,
+     monthly_discount AS 'DC' ,city + ' ' + street AS 'FULL_ADDRESS'
+     FROM customers
+
+10) SELECT DISTINCT monthly_discount FROM customers
+
+11) SELECT DISTINCT pack_id FROM customers
+
+

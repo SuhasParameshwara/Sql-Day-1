@@ -1,0 +1,141 @@
+Filtering and Sorting 1
+
+1) SELECT first_name,
+    last_name,
+    package_number FROM Customers
+    WHERE last_name = 'King'
+ 
+2) SELECT * FROM Packages WHERE speed='5Mbps'
+ 
+3) SELECT first_name,
+    last_name,
+    package_number,
+    monthly_discount
+    FROM Customers 
+    WHERE monthly_discount < 30 
+ 
+4) SELECT * FROM Customers 
+    WHERE dateofjoin < '2007-01-01'
+ 
+5) SELECT customer_num,
+    first_name,
+    state,
+    city,
+    pack_num
+    FROM Customers 
+    WHERE pack_num IN (21,28,14)
+ 
+6) SELECT customer_num,
+    first_name,
+    state,
+    city,
+    pack_num
+    FROM Customers 
+    WHERE pack_num NOT IN (27, 10 , 3)
+ 
+7) SELECT  last_name,
+    main_phone_num,
+    monthly_discount,
+    pack_num
+    FROM Customers 
+    WHERE customer_num IN (314,560,703)
+ 
+8) SELECT first_name,
+    monthly_discount FROM Customers
+    WHERE first_name LIKE '%E'
+ 
+9) SELECT last_name,
+    pack_num 
+    FROM Customers
+    WHERE last_name LIKE '_D%'
+ 
+10) SELECT * FROM Customers
+      WHERE last_name
+      LIKE '%L%' 
+     OR last_name
+     LIKE '%J%' 
+     OR last_name
+     LIKE '%H%'
+    ORDER BY monthly_discount DESC
+ 
+
+
+11) SELECT first_name,
+      dateofjoin,
+      pack_num 
+      FROM Customers
+      WHERE first_name 
+      NOT LIKE '%A%'
+     ORDER BY pack_num 
+ 
+12) SELECT * FROM Customers
+      WHERE pack_num IS NULL
+ 
+13) SELECT first_name +' '+ last_name AS 'FULL_NAME', 
+      monthly_discount
+      FROM Customers
+      WHERE monthly_discount 
+      NOT BETWEEN 20 AND 30
+      ORDER BY first_name +' '+ last_name
+ 
+14) SELECT first_name +' '+ last_name AS 'FULL_NAME',
+      main_phone_num + ' ' + street AS 'CONTACTS',
+      monthly_discount AS 'DC'
+      FROM Customers
+      WHERE monthly_discount BETWEEN 11 AND 27 
+ 
+15) SELECT * FROM Customers 
+      WHERE monthly_discount
+      BETWEEN 30 AND 40 
+      AND state = 'New York'
+     OR pack_num
+     NOT IN (30, 19, 8)
+     AND dateofjoin < '2007-01-01'
+    ORDER BY pack_num, monthly_discount
+ 
+16) SELECT last_name,pack_num,birth_date
+      FROM Customers
+      WHERE dateofjoin 
+      BETWEEN '2007-12-12' AND '2010-04-17'
+      ORDER BY birth_date 
+ 
+17) SELECT pack_num,
+      start_date,
+      speed 
+      FROM Packages 
+     WHERE start_date  < '2007-01-01'
+ 
+18) SELECT pack_num,
+      speed,
+      sector_id 
+      FROM Packages 
+      WHERE sector_id = 1 
+ 
+19) SELECT pack_num,
+      speed,
+      sector_id 
+      FROM Packages 
+     WHERE speed IN ('5Mbps' , '10Mbps')
+ 
+ 20) SELECT last_name,
+       monthly_discount
+       FROM Customers
+       WHERE city = 'Orlando' 
+ 
+21) SELECT last_name,
+      pack_num 
+      FROM Customers 
+      WHERE pack_num IN (9 , 18) 
+
+22) SELECT first_name,
+      main_phone_num,
+      secondary_phone_num 
+      FROM Customers
+      WHERE secondary_phone_num IS NULL
+ 
+23) SELECT  first_name,
+      monthly_discount,
+      pack_num
+     FROM Customers
+    WHERE monthly_discount IS NULL
+

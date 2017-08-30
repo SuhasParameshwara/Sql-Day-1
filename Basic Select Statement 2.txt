@@ -1,0 +1,29 @@
+Basic Select Statement 2
+
+1) SELECT 
+    employee_id ,
+    first_name ,
+    last_name ,
+    phone_number ,                                                                                                                                          department_id  FROM   employees 
+
+2) SELECT first_name ,
+    last_name ,
+    hire_date ,
+    salary , salary * 12 AS "ANNUAL_SAL" FROM employees 
+
+3) SELECT first_name || ' ' || last_name AS "FULL_NAME" , 
+    phone_number || ' - ' || email AS "CONTACT_DETAILS"  FROM     employees 
+
+4) SELECT DISTINCT manager_id FROM employees 
+
+5) SELECT last_name || ' ' || job_id AS "EMPLOYEE_AND_TITLE" FROM employees 
+
+6) SELECT first_name AS "FN" , last_name AS "LN" , 
+    salary AS "SAL" ,  'HD : '|| hire_date AS "HD" FROM employees 
+
+7) SELECT DISTINCT salary FROM employees
+
+8) SELECT DISTINCT department_id , job_id  
+    FROM employees
+
+
